@@ -1,12 +1,14 @@
 <template>
   <div class="flex flex-wrap justify-around mb-4 border-t border-b py-2 sticky pin-t">
-    <div
-      class="w-1/6 text-center"
+    <router-link
+      class="w-1/6 text-center cursor-pointer"
+      tag="div"
+      :to="{ name: 'lesson', params: { lesson: item.slug }}"
       v-for="(item, key) in resources"
       :key="key"
     >
       {{ item.content.name }}
-    </div>
+    </router-link>
   </div>
 </template>
 

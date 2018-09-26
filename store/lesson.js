@@ -49,6 +49,22 @@ export default {
         commit('SET_LESSONS', res.data.stories)
       }).catch((res) => {
       })
+    },
+    async findLessons ({ commit }, lesson) {
+      let context = this.app.context
+      let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+      let { data } = await context.app.$storyapi.get(`cdn/stories/categories/${lesson}`, {
+        version: version
+      })
+
+      context.app.$storyapi.get('cdn/stories', {
+        starts_with: 'posts/',
+        'filter_query[categories][exists]': data.story.uuid,
+        version: version
+      }).then((res) => {
+        commit('SET_LESSONS', res.data.stories)
+      }).catch((res) => {
+      })
     }
   },
   mutations: {

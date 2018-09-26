@@ -226,6 +226,9 @@ module.exports = {
       'Liberation Mono',
       'Courier New',
       'monospace',
+    ],
+    'kanit': [
+      'kanit, sans-serif'
     ]
   },
 
