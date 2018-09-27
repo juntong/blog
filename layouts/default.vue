@@ -1,20 +1,20 @@
 <template>
   <div>
+    <nav-layout/>
+    <menu-layout/>
     <div class="container mx-auto px-4 font-kanit">
-      <div class="flex w-full justify-center py-4">
-        <span class="text-3xl">Blog...</span>
-      </div>
-      <menu-layout/>
       <nuxt/>
     </div>
   </div>
 </template>
 
 <script>
+  import NavLayout from '../components/Nav'
   import MenuLayout from '../components/Menu'
 
   export default {
     components: {
+      NavLayout,
       MenuLayout
     }
   }
