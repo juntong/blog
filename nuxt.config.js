@@ -48,8 +48,19 @@ module.exports = {
         accessToken: 'QMyZgEfadmUHqdcwxW5kzQtt',
         cacheProvider: 'memory'
       }
-    ]
+    ],
+    [
+      '@nuxtjs/google-analytics', {
+        id: 'UA-126581253-1'
+      }
+    ],
+    ['@nuxtjs/google-adsense']
   ],
+
+  'google-adsense': {
+    id: 'ca-pub-2884777141626577',
+    pageLevelAds: true
+  },
   /*
   ** Axios module configuration
   */
