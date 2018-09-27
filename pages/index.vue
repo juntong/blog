@@ -10,6 +10,8 @@
       <h3 class="mb-4">{{ story.content.title }}</h3>
       <p class="mb-6">{{ story.content.description }}</p>
     </router-link>
+
+    <adsbygoogle class="w-full" />
   </section>
 </template>
 
