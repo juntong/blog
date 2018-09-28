@@ -1,7 +1,6 @@
 <template>
   <div>
     <nav-layout/>
-    <menu-layout/>
     <div class="container mx-auto px-4 font-kanit">
       <nuxt/>
     </div>

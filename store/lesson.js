@@ -1,6 +1,9 @@
 import { make } from 'vuex-pathify'
 
 let state = {
+  category: {
+    content: {}
+  },
   categories: [
     {
       content: {
@@ -56,6 +59,8 @@ export default {
       let { data } = await context.app.$storyapi.get(`cdn/stories/categories/${lesson}`, {
         version: version
       })
+
+      commit('SET_CATEGORY', data.story)
 
       context.app.$storyapi.get('cdn/stories', {
         starts_with: 'posts/',

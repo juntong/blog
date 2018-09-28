@@ -22,7 +22,20 @@
       await store.dispatch('lesson/findLessons', params.lesson)
     },
     computed: {
-      resources: get('lesson/lessons')
+      resources: get('lesson/lessons'),
+      category: get('lesson/category')
+    },
+    head () {
+      return {
+        title: `Blog: ${this.category.content.name}`,
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.category.content.description
+          }
+        ]
+      }
     }
   }
 </script>

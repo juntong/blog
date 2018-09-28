@@ -25,6 +25,18 @@ export default {
     }).then((res) => {
       return res.data
     })
+  },
+  head () {
+    return {
+      title: `Blog: ${this.story.content.title}`,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.story.content.description
+        }
+      ]
+    }
   }
 }
 </script>
