@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'universal',
@@ -34,14 +35,14 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '~/plugins/vue-simple-markdown'
+    '~/plugins/vue-simple-markdown',
+    '~/plugins/font-awesome'
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     [
       'storyblok-nuxt', {
@@ -72,9 +73,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
+    plugins: [
+      new webpack.ProvidePlugin({
+        '_': 'lodash'
+      })
+    ],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {

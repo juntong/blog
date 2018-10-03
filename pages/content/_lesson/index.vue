@@ -1,25 +1,25 @@
 <template>
   <div>
-    <router-link
-      class="cursor-pointer mb-6"
+    <list-item
       v-for="(story, key) in resources"
-      :to="{ name: 'lesson-slug', params: { slug: story.slug }}"
       :key="key"
-      tag="div"
-    >
-      <h3 class="mb-4">{{ story.content.title }}</h3>
-      <p class="mb-6">{{ story.content.description }}</p>
-    </router-link>
+      :story="story"
+    />
   </div>
 </template>
 
 <script>
   import { get } from 'vuex-pathify'
 
+  import ListItem from '~/components/article/ListItem'
+
   export default {
     name: 'LessonIndex',
     async fetch ({ store, params }) {
       await store.dispatch('lesson/findLessons', params.lesson)
+    },
+    components: {
+      ListItem
     },
     computed: {
       resources: get('lesson/lessons'),
@@ -27,7 +27,7 @@
     },
     head () {
       return {
-        title: `Blog: ${this.category.content.name}`,
+        title: `Lesson: ${this.category.content.name}`,
         meta: [
           {
             hid: 'description',

@@ -1,16 +1,10 @@
 <template>
   <section>
-    <router-link
-      class="cursor-pointer mb-6"
+    <list-item
       v-for="(story, key) in resources"
-      :to="{ name: 'lesson', params: { lesson: story.slug }}"
       :key="key"
-      tag="div"
-    >
-      <h3 class="mb-4">{{ story.content.title }}</h3>
-      <p class="mb-6">{{ story.content.description }}</p>
-    </router-link>
-
+      :story="story"
+    />
     <adsbygoogle class="w-full" />
   </section>
 </template>
@@ -19,9 +13,14 @@
 <script>
   import { get, call } from 'vuex-pathify'
 
+  import ListItem from '~/components/article/ListItem'
+
   export default {
     async fetch ({ store }) {
       await store.dispatch('lesson/fetchLesson')
+    },
+    components: {
+      ListItem
     },
     computed: {
       resources: get('lesson/lessons')

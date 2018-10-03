@@ -28,12 +28,17 @@ export default {
   },
   head () {
     return {
-      title: `Blog: ${this.story.content.title}`,
+      title: `${_.upperFirst(this.story.content.label)}: ${this.story.content.title}`,
       meta: [
         {
           hid: 'description',
           name: 'description',
           content: this.story.content.description
+        },
+        {
+          hid: 'keywords',
+          name: 'keywords',
+          content: this.story.content.keywords
         }
       ]
     }

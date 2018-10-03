@@ -1,12 +1,17 @@
 <template>
   <div class="w-full justify-between py-4 mb-6 font-kanit bg-white shadow sticky pin-t">
     <div class="w-full flex container mx-auto px-4">
-      <div class="w-full md:w-3/5 text-center md:text-left text-3xl font-bold">Blog</div>
+      <router-link
+        to="/"
+        tag="div"
+        class="w-full md:w-3/5 text-center md:text-left text-3xl font-bold cursor-pointer">
+        Blog
+      </router-link>
       <div class="w-2/5 hidden md:flex items-stretch text-right">
         <router-link
           class="flex-1 self-center cursor-pointer"
           tag="div"
-          :to="{ name: 'lesson', params: { lesson: item.slug }}"
+          :to="{ name: 'content-lesson', params: { lesson: item.slug }}"
           v-for="(item, key) in resources"
           :key="key"
         >
