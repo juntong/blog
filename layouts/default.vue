@@ -1,9 +1,14 @@
 <template>
-  <div>
+  <div class="font-kanit">
     <nav-layout/>
-    <div class="container mx-auto px-4 font-kanit">
+    <div class="container mx-auto px-4 h-full">
       <nuxt/>
     </div>
+    <footer class="w-full flex container mx-auto px-4 py-10">
+      <span>
+        <font-awesome-icon :icon="['fa', 'copyright']" /> Vasit Juntong 2018.
+      </span>
+    </footer>
   </div>
 </template>
 
