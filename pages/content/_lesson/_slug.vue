@@ -32,7 +32,7 @@ export default {
       meta: [
         {
           name: 'og:url',
-          content: window.document.url
+          content: `https://easycodingthailand.com${this.$router.history.current.fullPath}`
         },
         {
           name: 'og:title',
