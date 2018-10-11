@@ -1,5 +1,5 @@
 <template>
-  <div class="font-kanit">
+  <div class="justify-between font-kanit">
     <nav-layout/>
     <div class="container mx-auto px-4 h-full">
       <nuxt/>
