@@ -31,6 +31,10 @@ export default {
       title: `${_.upperFirst(this.story.content.label)}: ${this.story.content.title}`,
       meta: [
         {
+          name: 'og:url',
+          content: window.document.url
+        },
+        {
           name: 'og:title',
           content: this.story.content.title
         },
