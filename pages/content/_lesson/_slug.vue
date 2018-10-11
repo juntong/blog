@@ -43,6 +43,18 @@ export default {
           content: this.story.content.description
         },
         {
+          name: 'twitter:card',
+          content: 'summary'
+        },
+        {
+          name: 'twitter:site',
+          content: '@VasitJuntong'
+        },
+        {
+          name: 'twitter:creator',
+          content: '@VasitJuntong'
+        },
+        {
           property: 'og:url',
           content: `https://easycodingthailand.com${this.$router.history.current.fullPath}`
         },
