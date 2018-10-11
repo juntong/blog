@@ -43,6 +43,18 @@ export default {
           content: this.story.content.description
         },
         {
+          property: 'og:url',
+          content: `https://easycodingthailand.com${this.$router.history.current.fullPath}`
+        },
+        {
+          property: 'og:title',
+          content: this.story.content.title
+        },
+        {
+          property: 'og:description',
+          content: this.story.content.description
+        },
+        {
           hid: 'description',
           name: 'description',
           content: this.story.content.description
