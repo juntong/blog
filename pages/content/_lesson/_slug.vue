@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-10">
     <h3 class="text-3xl text-grey-darket mb-6">{{ story.content.title }}</h3>
     <p class="text-grey-darker mb-3 border-b text-sm pb-4">
       {{ story.content.description }}
